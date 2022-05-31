@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 17:21:49 by user42            #+#    #+#             */
-/*   Updated: 2022/01/22 11:35:06 by user42           ###   ########.fr       */
+/*   Updated: 2022/05/31 12:53:10 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,8 @@ void	ReplaceContact(contact (&contact)[8])
 			no_cin();
 		if (!choice.compare("y"))
 		{
-			while (1)
-			{
-				DisplayPhoneBook(contact);
-				std::cout << "Select the contact index you want to replace: ";
-				if (!getline(std::cin, choice))
-					no_cin();
-				index = atoi(choice.c_str());
-				if (index >= 1 && index <= 8 && contact[index - 1].IsContactInitialized())
-				{
-					SetContact(contact, index - 1);
-					return ;
-				}
-				else
-					std::cerr << "The contact index does not exist..." << std::endl;
-				
-			}
+			SetContact(contact, 0);
+			return ;	
 		}
 		else if (!choice.compare("n"))
 			return ;
@@ -56,7 +42,7 @@ void	ReplaceContact(contact (&contact)[8])
 }
 void	AddCmd(contact (&contact)[8])
 {
-   	if (max_contact == 8)
+   	if (max_contact == 4)
 		ReplaceContact(contact);
 	else
 	{
