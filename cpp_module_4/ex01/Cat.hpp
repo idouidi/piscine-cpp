@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 21:05:58 by user42            #+#    #+#             */
-/*   Updated: 2022/07/07 18:37:36 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/07 22:59:39 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ public:
     virtual ~Cat();
 
     virtual void makeSound() const;
+    Brain* getBrain() const;
+
 };
 
 #endif

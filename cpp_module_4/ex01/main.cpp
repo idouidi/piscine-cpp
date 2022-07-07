@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 21:45:32 by user42            #+#    #+#             */
-/*   Updated: 2022/07/07 21:19:49 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/07 22:47:40 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ int main()
 	for(int i = 0; i < 6; i++)
 		delete array[i];
 	std::cout << "\n	-	-	-	-	-	-	-	-\n" << std::endl;
-
 	std::cout << "## The deep copy is illustrated by the existence of the string copied from array[0].\
-While this instance was deleted : \n" << *test_deep_cpy->getBrain()->getIdeas() << std::endl;
-	 std::cout << "\n	-	-	-	-	-	-	-	-\n" << std::endl;
-
+ While this instance was deleted : \n" << *test_deep_cpy->getBrain()->getIdeas() << std::endl;
+ 	std::cout << "\n	-	-	-	-	-	-	-	-\n" << std::endl;
 	delete test_deep_cpy;
 }

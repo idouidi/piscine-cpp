@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 21:25:49 by user42            #+#    #+#             */
-/*   Updated: 2022/07/07 20:44:40 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/07 22:58:18 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,11 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
     std::cout << "meow meow" << std::endl;
+}
+
+Brain* Cat::getBrain() const
+{
+    if (_brain)
+        return (_brain);
+    return (NULL);
 }

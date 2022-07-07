@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 21:27:49 by user42            #+#    #+#             */
-/*   Updated: 2022/07/07 20:41:51 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/07 22:39:12 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ Dog& Dog::operator=(const Dog& a)
     {
         type = a.type;
         *_brain = *a._brain;
-        nbDog += 1;
         std::cout << "(Assignation Copy Dog Constructor) Im the " << nbDog << " Dog created and "
          "this is my idea " << *_brain->getIdeas() << std::endl;
     }

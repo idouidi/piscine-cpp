@@ -3,29 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 21:45:32 by user42            #+#    #+#             */
-/*   Updated: 2022/02/05 14:16:29 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/07 23:33:30 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 #include "Cat.hpp"
 
 int main()
 {
-	//AAnimal error(); trying to create an object from an abstract class
-	AAnimal* meta[6];
+	//We cant create an instance from an abstract class
+	//AAnimal test(); 
+	AAnimal* array[6];
+
+	std::cout << "\n	-	-	-	-	-	-	-	-\n" << std::endl;
 	for(int i = 0; i < 6; i++)
 	{
 		if (i <= 2)
-			meta[i] = new Dog();
+			array[i] = new Dog();
 		else
-			meta[i] = new Cat();
+			array[i] = new Cat();
 		std::cout << std::endl;
 	}
+
 	for(int i = 0; i < 6; i++)
-		delete meta[i];
+		delete array[i];
 }

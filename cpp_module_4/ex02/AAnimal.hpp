@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 14:03:16 by user42            #+#    #+#             */
-/*   Updated: 2022/02/05 14:06:12 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/07 23:31:32 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #ifndef __AANIMAL_H__
  #define __AANIMAL_H__
 
-#include <iostream>
+# include <iostream>
+# include <cstdlib>
 # include "Brain.hpp"
-
 
 class AAnimal
 {

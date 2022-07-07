@@ -6,18 +6,18 @@
 #    By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/07 16:19:58 by idouidi           #+#    #+#              #
-#    Updated: 2022/07/07 16:39:11 by idouidi          ###   ########.fr        #
+#    Updated: 2022/07/07 23:32:57 by idouidi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		= main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS		= main.cpp AAnimal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJS		= $(SRCS:.cpp=.o)
 HEADER		= ./
 CXX			=  c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
-NAME		= ex00
+NAME		= ex02
 
-%.o			: %.cpp
+%.o			: %.cpp %.hpp
 	$(CXX) $(CXXFLAGS) -I $(HEADER) -o $@ -c $<
 
 $(NAME)		: $(OBJS)

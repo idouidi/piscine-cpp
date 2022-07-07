@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.cpp                                        :+:      :+:    :+:   */
+/*   AAAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 14:03:07 by user42            #+#    #+#             */
-/*   Updated: 2022/02/05 14:04:28 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/07 23:29:10 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal():type("Human")
-{}
+AAnimal::AAnimal():type("AAnimal")
+{
+    std::cout << "(Default AAnimal Constructor)" << std::endl;
+}
 
 AAnimal::AAnimal(const AAnimal& a)
 {
@@ -32,7 +34,7 @@ AAnimal& AAnimal::operator=(const AAnimal& a)
 
 AAnimal::~AAnimal()
 {
-    std::cout << "(AANIMAL CLASS): " << " is sleeping" << std::endl;
+    std::cout << "AAnimal is Destroyed" << std::endl;
 }
 
 void AAnimal::setType(std::string str)
@@ -57,9 +59,9 @@ std::string gen_random(const int len) {
         "abcdefghijklmnopqrstuvwxyz";
     std::string tmp_s;
     tmp_s.reserve(len);
-
+    std::srand(time(NULL));
     for (int i = 0; i < len; ++i) {
-        tmp_s += alphanum[rand() % (sizeof(alphanum) - 1)];
+        tmp_s += alphanum[std::rand() % (sizeof(alphanum) - 1)];
     }
     
     return tmp_s;
