@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 21:07:05 by user42            #+#    #+#             */
-/*   Updated: 2022/02/04 14:16:12 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/07 20:24:09 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __DOG_H__
- #define __DOG_H__
+# define __DOG_H__
 
-#include <iostream>
+# include <iostream>
 # include "Animal.hpp"
-
-static int nbDog = 0;
 
 class Dog: virtual public Animal
 {
@@ -29,6 +27,7 @@ public:
     virtual ~Dog();
 
     virtual void makeSound() const;
+    Brain* getBrain() const;
 };
 
 #endif

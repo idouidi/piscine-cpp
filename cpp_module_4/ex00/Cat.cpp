@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 21:25:49 by user42            #+#    #+#             */
-/*   Updated: 2022/02/03 22:20:59 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/07 16:41:37 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,22 @@ Cat::Cat():Animal()
 }
 
 
-Cat::Cat(const Cat& a)
+Cat::Cat(const Cat& a):Animal()
 {
-    *this = a;
+    if (this != &a)
+        *this = a;
 }
 
 Cat& Cat::operator=(const Cat& a)
 {
     if (this != &a)
-    {
         type = a.type;
-    }
     return (*this);
 }
 
 Cat::~Cat()
 {
-    std::cout << type << " is sleeping" << std::endl;
+    std::cout << type << " was destroyed" << std::endl;
 }
 
 void Cat::makeSound() const

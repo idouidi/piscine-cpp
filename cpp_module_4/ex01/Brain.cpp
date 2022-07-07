@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 23:51:52 by user42            #+#    #+#             */
-/*   Updated: 2022/02/04 14:32:48 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/07 20:49:43 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 Brain::Brain()
 {
-    std::cout << "(Default) a Brain was implemented" << std::endl;
+    std::cout << "(Default Brain Constructor)" << std::endl;
 }
 
 Brain::Brain(const Brain& b)
 {
     *this = b;
-    std::cout << "(Copy) a Brain was implemented" << std::endl;
+    std::cout << "(Copy Brain Constructor)" << std::endl;
 }
 
 Brain& Brain::operator=(const Brain& b)
 {
     if (this != &b)
-        *this = b;
+        *ideas = *b.ideas;
     return (*this);
 }
 

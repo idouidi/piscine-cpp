@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 22:56:32 by user42            #+#    #+#             */
-/*   Updated: 2022/02/03 23:33:55 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/07 16:44:17 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class WrongCat: public WrongAnimal
 {
 	protected:
 		std::string	type;
-
 	public:
 		WrongCat();
 		virtual ~WrongCat();

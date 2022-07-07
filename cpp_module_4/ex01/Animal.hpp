@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 20:59:21 by user42            #+#    #+#             */
-/*   Updated: 2022/02/04 14:54:29 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/07 18:50:09 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __ANIMAL_H__
- #define __ANIMAL_H__
+# define __ANIMAL_H__
 
-#include <iostream>
+# include <iostream>
+# include <cstdlib>
 # include "Brain.hpp"
-
 
 class Animal
 {
