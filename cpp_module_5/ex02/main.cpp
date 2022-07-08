@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 17:08:49 by idouidi           #+#    #+#             */
-/*   Updated: 2022/02/23 04:10:43 by idouidi          ###   ########.fr       */
+/*   Created: 2022/07/08 20:07:45 by idouidi           #+#    #+#             */
+/*   Updated: 2022/07/08 20:51:26 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main ()
 {
-	Bureaucrat Bob("Bob", 1);
+	Bureaucrat              Bob("Bob", 1);
 	ShrubberyCreationForm Form1("Form1");
 
 	std::cout << std::endl;
@@ -30,8 +30,10 @@ int main ()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+
 	std::cout << std::endl;
 	std::cout << Form1 << std::endl;
+
 	try
 	{
 		Form1.beSigned(Bob);
@@ -50,6 +52,8 @@ int main ()
 		std::cerr << e.what() << std::endl;
 	}
 	std::cout << Form1 << std::endl;
+
+//  *   *   *   *   *   *   *   *   *   *   *   *   *
 	std::cout << std::endl;
 
 	RobotomyRequestForm Form2("Form 2");
@@ -62,7 +66,7 @@ int main ()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
+//  *   *   *   *   *   *   *   *   *   *   *   *   *
 	PresidentialPardonForm Form3("Form3");
 	try
 	{
@@ -73,9 +77,8 @@ int main ()
 	{
 		std::cerr << e.what() << '\n';
 	}
-
 	std::cout <<std::endl;
-
+//  *   *   *   *   *   *   *   *   *   *   *   *   *
 	Bureaucrat Jason("Jason", 148);
 	Jason.executeForm(Form1);
 

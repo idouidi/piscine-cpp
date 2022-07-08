@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 17:24:15 by idouidi           #+#    #+#             */
-/*   Updated: 2022/02/23 00:35:43 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/08 20:56:37 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ void ShrubberyCreationForm::execute(const Bureaucrat& b) const
 		throw IsntSignedExecption();
 
 	std::string name_file = getName() + "_shrubbery";
-	std::ofstream out_file(name_file);
+	std::fstream out_file;
 
+	out_file.open(name_file.c_str(), std::ios::out);
 	if (out_file.fail())
 		throw ErrorFileExecption();
 	std::string str =

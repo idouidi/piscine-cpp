@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 03:38:47 by idouidi           #+#    #+#             */
-/*   Updated: 2022/02/21 17:27:41 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/08 21:14:40 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,22 @@ Bureaucrat::Bureaucrat(const std::string name, int grade):_name(name), _grade(gr
 		throw GradeTooLowException();
 	if (_grade > 150)
 		throw GradeTooHighException();
-	std::cout << "(DEFAULT) A bureaucrat named " << _name << " with the " << _grade << " grade" << std::endl;
+	std::cout << "(DEFAULT CONSTRUCTOR) A bureaucrat named " << _name << " with the " << _grade << " grade" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& b)
 {
 	*this = b;
-	std::cout << "(COPY) A bureaucrat named " << _name << " with the " << _grade << "grade" << std::endl;
+	std::cout << "(COPY CONSTRUCTOR) A bureaucrat named " << _name << " with the " << _grade << "grade" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& b)
 {
 	if (this != &b)
 	{
-		*(const_cast<std::string*>(&_name)) = b._name;
 		_grade = b._grade;
 	}
-		std::cout << "(ASSIGNATION) A bureaucrat named " << _name << " with a grade of " << _grade  << std::endl;
+		std::cout << "(ASSIGNATION COPY CONSTRUCTOR) A bureaucrat named " << _name << " with a grade of " << _grade  << std::endl;
 	return (*this);
 }
 

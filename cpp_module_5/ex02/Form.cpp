@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 12:56:27 by idouidi           #+#    #+#             */
-/*   Updated: 2022/03/03 15:18:56 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/08 20:44:50 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,12 @@ Form::Form(const Form& f)
 	:_name(f.getName()), _signed(f.getSigned()), _grade_required_to_sign(f.getGradeRequiredToSign()),
 	_grade_required_to_exec(f.getGradeRequiredToExec())
 {
-	*this = f;
-	if (_grade_required_to_sign < 1 || _grade_required_to_exec < 1)
-		throw GradeTooLowExecption ();
-	if (_grade_required_to_sign > 150 || _grade_required_to_exec > 150)
-		throw GradeTooHighExecption ();
 }
 
 Form& Form::operator=(const Form& b)
 {
 	if (this != &b)
 	{
-		*(const_cast<std::string*>(&_name)) = b._name;
-		*(const_cast<int*>(&_grade_required_to_sign)) = b._grade_required_to_sign;
-		*(const_cast<int*>(&_grade_required_to_exec)) = b._grade_required_to_exec;
 		_signed = b._signed;
 	}
 	return (*this);
@@ -76,12 +68,12 @@ const std::string Form::getName() const
 	return (_name);
 }
 
-const int Form::getGradeRequiredToSign() const
+int Form::getGradeRequiredToSign() const
 {
 	return (_grade_required_to_sign);
 }
 
-const int Form::getGradeRequiredToExec() const
+int Form::getGradeRequiredToExec() const
 {
 	return (_grade_required_to_exec);
 }

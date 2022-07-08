@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 13:17:05 by user42            #+#    #+#             */
-/*   Updated: 2022/03/03 15:42:10 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/08 21:06:50 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Intern::Intern()
 
 Intern::Intern(const Intern& i)
 {
-   static_cast<void>(i);
+   *this = i;
 }
 
 Intern& Intern::operator=(const Intern& i)
@@ -40,7 +40,7 @@ const char* Intern::FormDoesNotExist::what() const throw()
 
 Form* Intern::makeForm(const std::string form_name, const std::string target)
 {
-    std::array<std::string, 3> ref = {"shrubbery creation", "robotomy request",
+    std::string ref[3] = {"shrubbery creation", "robotomy request",
          "presidential pardon"};
     try
     {
@@ -70,5 +70,5 @@ Form* Intern::makeForm(const std::string form_name, const std::string target)
         std::cerr << "Intern can not create " << form_name << " named " << target << ", because "
             << e.what() << std::endl;
     }
-    return (nullptr);
+    return (NULL);
 }

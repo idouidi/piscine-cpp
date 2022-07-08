@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 23:50:18 by idouidi           #+#    #+#             */
-/*   Updated: 2022/02/23 02:09:24 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/08 21:13:16 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
 :Form(target, 72, 45)
 {
-	setName(target);
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& r)
 :Form(r)
 {
-	setName(r.getName());
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& r)
@@ -47,7 +45,7 @@ void RobotomyRequestForm::execute(const Bureaucrat& b)const
 		throw GradeTooLowExecption();
 	if (!getSigned())
 		throw IsntSignedExecption();
-	srand(time(NULL));
+	std::srand(time(NULL));
 	double rdm = ((double) std::rand() / (RAND_MAX));
 	if (rdm > 0.5)
 	{

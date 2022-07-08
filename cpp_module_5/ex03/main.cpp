@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:08:49 by idouidi           #+#    #+#             */
-/*   Updated: 2022/03/03 15:44:13 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/08 21:55:42 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,53 +18,21 @@
 
 int main ()
 {
-	Bureaucrat Bob("Bob", 1);
-	ShrubberyCreationForm Form1("Form1");
+
+	Intern 		Mark;	
 
 	std::cout << std::endl;
-	try
-	{
-		Form1.execute(Bob);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	std::cout << Form1 << std::endl;
-	try
-	{
-		Form1.beSigned(Bob);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-
-	try
-	{
-		Form1.execute(Bob);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << Form1 << std::endl;
-	std::cout << std::endl;
-
-	Intern Mark;
-
-	Form* form1 = Mark.makeForm("shrubbery creation", "forest");
-	Form* form2 = Mark.makeForm("robotomy request", "bender");
-	Form* form3 = Mark.makeForm("presidential pardon", "poutine");
+	Form* Form01 = Mark.makeForm("shrubbery creation", "forest");
+	Form* Form02 = Mark.makeForm("robotomy request", "bender");
+	Form* Form03 = Mark.makeForm("presidential pardon", "poutine");
 	Mark.makeForm("polaroid like form", "instagram");
 
 	std::cout << std::endl;
-	std::cout << *form1 << *form2 << *form3 << std::endl;
+	std::cout << *Form01 << *Form02 << *Form03 << std::endl;
 	std::cout << std::endl;
 
-	delete form1;
-	delete form2;
-	delete form3;
+	delete Form01;
+	delete Form02;
+	delete Form03;
 	return (0);
 }

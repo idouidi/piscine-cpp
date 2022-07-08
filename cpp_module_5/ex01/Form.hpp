@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:55:59 by idouidi           #+#    #+#             */
-/*   Updated: 2022/02/22 15:56:12 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/08 17:07:01 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ public:
 
 	const std::string	getName() const;
 	bool				getSigned() const;
-	const int			getGradeRequiredToSign() const;
-	const int			getGradeRequiredToExec() const;
+	int			getGradeRequiredToSign() const;
+	int			getGradeRequiredToExec() const;
 
 	class GradeTooHighExecption: public std::exception
 	{

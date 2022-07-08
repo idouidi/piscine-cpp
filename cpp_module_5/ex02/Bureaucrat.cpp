@@ -6,16 +6,14 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 03:38:47 by idouidi           #+#    #+#             */
-/*   Updated: 2022/02/23 04:11:27 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/08 21:17:06 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat():_name("none"), _grade(150)
 {
-	_grade = 150;
-	*(const_cast<std::string*>(&_name)) = "none";
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade):_name(name), _grade(grade)
@@ -37,7 +35,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& b)
 {
 	if (this != &b)
 	{
-		*(const_cast<std::string*>(&_name)) = b._name;
 		_grade = b._grade;
 	}
 		std::cout << "(ASSIGNATION) A bureaucrat named " << _name << " with a grade of " << _grade  << std::endl;

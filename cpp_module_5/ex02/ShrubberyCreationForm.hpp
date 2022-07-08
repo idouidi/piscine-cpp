@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 16:21:50 by idouidi           #+#    #+#             */
-/*   Updated: 2022/02/23 00:35:42 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/08 20:27:40 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define  __SHRUBBERYCREATION_HPP__
 
 #include "Form.hpp"
+#include <string>
 
 class ShrubberyCreationForm: public Form
 {

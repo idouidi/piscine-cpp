@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 11:55:59 by idouidi           #+#    #+#             */
-/*   Updated: 2022/02/23 02:09:22 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/08 20:57:02 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "Bureaucrat.hpp"
 # include <fstream>
+# include <cstdlib>
 # include <time.h>
 
 class Bureaucrat;
@@ -37,8 +38,8 @@ public:
 	//GETER
 	const std::string	getName() const;
 	bool				getSigned() const;
-	const int			getGradeRequiredToSign() const;
-	const int			getGradeRequiredToExec() const;
+	int					getGradeRequiredToSign() const;
+	int					getGradeRequiredToExec() const;
 
 	//SETER
 	void				setName(const std::string name);
@@ -66,9 +67,7 @@ public:
 	};
 
 	void				beSigned(const Bureaucrat& b);
-
-	
-	virtual void execute(const Bureaucrat& b) const = 0;
+	virtual void 		execute(const Bureaucrat& b) const = 0;
 };
 
 std::ostream& operator<<(std::ostream& flux, const Form& f);

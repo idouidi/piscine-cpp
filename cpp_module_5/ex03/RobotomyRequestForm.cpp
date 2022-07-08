@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 23:50:18 by idouidi           #+#    #+#             */
-/*   Updated: 2022/02/23 02:09:24 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/08 21:08:19 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& r)
 :Form(r)
 {
 	setName(r.getName());
+	setSigned(r.getSigned());
+	setGradeRequiredToSign(r.getGradeRequiredToSign());
+	setGradeRequiredToExec(r.getGradeRequiredToExec());
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& r)

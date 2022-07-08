@@ -6,16 +6,14 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 03:38:47 by idouidi           #+#    #+#             */
-/*   Updated: 2022/02/22 16:01:16 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/08 19:12:15 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat():_name("none"), _grade(150)
 {
-	_grade = 150;
-	*(const_cast<std::string*>(&_name)) = "none";
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade):_name(name), _grade(grade)

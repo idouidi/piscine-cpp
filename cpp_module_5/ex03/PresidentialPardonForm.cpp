@@ -3,13 +3,11 @@
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
 :Form(target, 25, 5)
 {
-	setName(target);
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& p)
 :Form(p)
 {
-	setName(p.getName());
 }
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& p)
