@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 02:41:00 by idouidi           #+#    #+#             */
-/*   Updated: 2022/03/05 03:52:58 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/16 02:25:35 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define  __BASE_HPP__
 
 # include <iostream>
+# include <cstdlib> 
 
 class Base
 {

@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 00:48:08 by idouidi           #+#    #+#             */
-/*   Updated: 2022/03/05 01:38:47 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/16 01:04:53 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@
 # include <iostream>
 # include <stdint.h>
 
-typedef struct s_data
+typedef struct  s_data
 {
-    int     nbr;
-    void    *ptr;
-    char    _char;
-}               t_data;
+    void        *ptr;
+}               Data;
 
-uintptr_t	serialize(t_data *ptr);
-t_data		*deserialize(uintptr_t ptr);
+uintptr_t	    serialize(Data *ptr);
+Data		    *deserialize(uintptr_t ptr);
 
-std::ostream	&operator<<(std::ostream &flux, const t_data &d);
+std::ostream	&operator<<(std::ostream &flux, const Data &d);
 
 #endif

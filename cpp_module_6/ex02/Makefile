@@ -6,22 +6,31 @@
 #    By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/05 02:38:42 by idouidi           #+#    #+#              #
-#    Updated: 2022/03/05 03:30:23 by idouidi          ###   ########.fr        #
+#    Updated: 2022/07/16 01:51:32 by idouidi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp Base.cpp
-@OBJS = $(SRCS:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -std=++98 -g -fsanitize=address -Wshadow -Wno-shado
-NAME = ex02
+SRCS		= main.cpp Base.cpp
+OBJS		= $(SRCS:.cpp=.o)
+HEADER		= ./
+CXX			=  c++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
+NAME		= ex02
 
-all : $(NAME)
+%.o			: %.cpp %.hpp
+	$(CXX) $(CXXFLAGS) -I $(HEADER) -o $@ -c $<
 
-$(NAME): $(@OBJS)
-	clang++ $(CFLAGS) -o $(NAME) $(@OBJS)
+$(NAME)		: $(OBJS)
+	$(CXX) $(CXXFLAGS) -I $(HEADER) -o $(NAME) $(OBJS)
 
-clean:
-	rm -rf $(@OBJS)
-fclean: clean
+all			: $(NAME)
+
+clean		:
+	rm -rf $(OBJS)
+
+fclean		: clean
 	rm -rf $(NAME)
-re : fclean all
+
+re			: fclean all
+
+.PHONY: all clean fclean re

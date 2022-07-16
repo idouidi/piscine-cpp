@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 17:15:35 by idouidi           #+#    #+#             */
-/*   Updated: 2022/03/05 00:38:41 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/15 16:39:06 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 Convert::Convert(const std::string value):_value(value)
 {}
 
-Convert::Convert(const Convert& c)
+Convert::Convert(const Convert& c):_value(c._value)
 {
-    *this = c;
 }
 
 Convert& Convert::operator=(const Convert& c)

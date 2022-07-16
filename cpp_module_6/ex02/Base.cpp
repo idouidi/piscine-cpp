@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 03:29:39 by idouidi           #+#    #+#             */
-/*   Updated: 2022/03/05 04:11:35 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/16 02:32:48 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,51 +17,79 @@ Base::~Base()
 
 Base* generate(void)
 {
-    srand((unsigned) time(0));
     double rdm = 1 + (rand() % 3);
     if (rdm <= 1)
     {
-        std::cout << "Class A is created" << std::endl;
+        std::cout << "Class [A] is created: " << std::endl;
         return new A;
     }
     else if (rdm <= 2)
     {
-        std::cout << "Class B is created" << std::endl;
+        std::cout << "Class [B] is created: " << std::endl;
         return new B;
     }
     else
     {
-        std::cout << "Class C is created" << std::endl;
+        std::cout << "Class [C] is created: " << std::endl;
         return new C;
     }
 }
 
-void identify(Base* p) 
-{
-  if (dynamic_cast<A*>(p))
-    std::cout << "p point to : ";
-  else if (dynamic_cast<B*>(p))
-    std::cout << "p point to : ";
-  else if (dynamic_cast<C*>(p))
-    std::cout << "p point to: ";
-}
 
-bool handle_cast(Base& p, const std::string& s) 
+void identify(Base& p)
 {
-  try {
-    if (s == "A") {
-      (void)dynamic_cast<A&>(p);
-    } else if (s == "B") {
-      (void)dynamic_cast<B&>(p);
-    } else if (s == "C") {
-      (void)dynamic_cast<C&>(p);
+    try
+    {
+        (void)dynamic_cast<A&>(p);
+        std::cout << "A" << std::endl;
     }
-    std::cout << s << std::endl;
-  } catch (std::exception&) {}
-  return false;
+    catch (const std::exception& e)
+    {
+        try
+        {
+            (void)dynamic_cast<B&>(p);
+            std::cout << "B" << std::endl;
+        }
+        catch (const std::exception& e)
+        {
+            try
+            {
+                (void)dynamic_cast<C&>(p);
+                std::cout << "C" << std::endl;
+            }
+            catch (const std::exception& e)
+            {
+              std::cout << "not a correct upcast ..." << std::endl;
+            }
+        }
+    }
 }
 
-void identify(Base& p) {
-  if (handle_cast(p, "A") || handle_cast(p, "B") || handle_cast(p, "C"))
-    return;
+void identify(Base* p)
+{
+    try
+    {
+        (void)dynamic_cast<A*>(p);
+        std::cout << "A" << std::endl;
+    }
+    catch (const std::exception& e)
+    {
+        try
+        {
+            (void)dynamic_cast<B*>(p);
+            std::cout << "B" << std::endl;
+        }
+        catch (const std::exception& e)
+        {
+            try
+            {
+                (void)dynamic_cast<C*>(p);
+                std::cout << "C" << std::endl;
+            }
+            catch (const std::exception& e)
+            {
+              std::cout << "not a correct upcast ..." << std::endl;
+            }
+        }
+    }
 }

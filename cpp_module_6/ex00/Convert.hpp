@@ -6,7 +6,7 @@
 /*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 16:34:32 by idouidi           #+#    #+#             */
-/*   Updated: 2022/03/05 00:42:04 by idouidi          ###   ########.fr       */
+/*   Updated: 2022/07/15 16:27:53 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
+# include <cstdlib>
 #include <exception>
 
 class Convert
