@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 20:39:55 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 14:16:11 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/20 16:31:06 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ class Array
         T& operator[](unsigned int i)
         {
             if (!_array)
-                throw std::bad_array_new_length();
+                throw std::domain_error("_array is not initialized");
             if (i < 0 || i >= n)
                 throw OutOfBonds();
             return _array[i];

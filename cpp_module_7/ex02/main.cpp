@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 22:35:05 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 14:35:01 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/20 16:38:33 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,16 @@ int main()
     std::cout << std::endl;
     try
     {
-        A[5] = "out of bonds";
+        A[0] = "operator [] workded";
+        A[5] = "FAIL";
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-    system("leaks ex02");
+    for (int i = 0; i < 4; i++)
+    {
+        std::cout << A.getArrayIndex(i) << " | ";
+    }
+    std::cout << std::endl;
 }
