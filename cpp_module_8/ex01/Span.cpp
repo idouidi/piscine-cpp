@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 23:02:28 by user42            #+#    #+#             */
-/*   Updated: 2022/03/16 12:30:27 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/22 23:12:20 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(unsigned int n):_N(n)
+Span::Span(unsigned int n):_n(n)
 {
-    if (static_cast<int>(n) < 0)
+    if (_n< 0)
         throw(std::overflow_error("The number it's not an unsigned int"));
-    _vector.reserve(n);
+    _vector.reserve(_n);
 }
 
 Span::Span(const Span& s)
@@ -28,7 +28,7 @@ Span& Span::operator=(const Span& s)
 {
     if (this != &s)
     {
-        _N = s._N;
+        _n = s._n;
         _vector = s._vector;
     }
     return (*this);
@@ -45,7 +45,7 @@ std::vector<int> Span::getVector() const
 
 void Span::addNumber(unsigned int n)
 {
-    if (_vector.size() >= _N)
+    if (_vector.size() >= _n)
         throw(std::out_of_range("Can not add more numbers"));
     _vector.push_back(n);
 }
@@ -64,7 +64,7 @@ unsigned int Span::shortestSpan()
     if (_vector.size() <= 2)
         throw(std::out_of_range("Not enough element"));
     std::vector<int>::iterator max = std::max_element(_vector.begin(), _vector.end());
-    unsigned int shortest_span = *max;
+    int shortest_span = *max;
     std::vector<int>vtc_cpy = _vector;
 
     std::sort(vtc_cpy.begin(), vtc_cpy.end());

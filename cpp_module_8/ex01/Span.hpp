@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:18:19 by user42            #+#    #+#             */
-/*   Updated: 2022/03/16 12:30:17 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/22 22:33:03 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@
 # include <vector>
 # include <stdexcept>
 # include <limits>
+# include <ctime>
 
 class Span
 {
 private:
-	unsigned int		_N;
+	unsigned int		_n;
 	std::vector<int>	_vector;
 	Span();
 public:
@@ -36,8 +37,7 @@ public:
 
 	void 					addNumber(unsigned int n);
 	unsigned int 			longestSpan();
-	unsigned int 			shortestSpan();
-};
+	unsigned int 			shortestSpan();};
 
 std::ostream&	operator<<(std::ostream& flux, const Span& s);
 

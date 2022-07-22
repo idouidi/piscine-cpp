@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 19:40:58 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 21:54:20 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/21 17:27:22 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,20 @@ int main ()
         vtc.push_back(i * 4);
 
     }
-     std::cout << "test for a list " << std::endl;
-    test_container<std::list<int>>(lst);
+    std::cout << "*   *   *   *   *   *   *   *   *   *   *\n" << std::endl;
+    std::cout << "test for a list " << std::endl;
+    test_container<std::list<int> >(lst);
+    std::cout << "*   *   *   *   *   *   *   *   *   *   *\n" << std::endl;
     std::cout << std::endl;
 
+    std::cout << "#   #   #   #   #   #   #   #   #   #   #\n" << std::endl;
     std::cout << "test for a  double-ended queue " << std::endl;
-    test_container<std::deque<int>>(dqe);
+    test_container<std::deque<int> >(dqe);
+    std::cout << "#   #   #   #   #   #   #   #   #   #   #\n" << std::endl;
     std::cout << std::endl;
 
+    std::cout << "+   +   +   +   +   +   +   +   +   +   +\n" << std::endl;
     std::cout << "test for a vector " << std::endl;
-    test_container<std::vector<int>>(vtc);
-    std::cout << std::endl;
+    test_container<std::vector<int> >(vtc);
+    std::cout << "+   +   +   +   +   +   +   +   +   +   +\n" << std::endl;
 }

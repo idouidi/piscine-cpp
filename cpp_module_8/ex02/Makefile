@@ -3,27 +3,35 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
+#    By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 12:33:02 by user42            #+#    #+#              #
-#    Updated: 2022/03/17 14:43:44 by user42           ###   ########.fr        #
+#    Updated: 2022/07/22 23:29:26 by idouidi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp
-@OBJS = $(SRCS:.cpp=.o)
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
-NAME = ex02
+SRCS		= main.cpp
+OBJS		= $(SRCS:.cpp=.o)
+CXX			=  c++
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g
+INCLUDES 	= $(shell find . -type f -name "*.hpp" | cut -c 3-)
+NAME		= ex02
 
-all: $(NAME)
 
-$(NAME): $(@OBJS)
-	clang++ ${CFLAGS} -o ${NAME} ${@OBJS}
+%.o			: %.cpp $(INCLUDES)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-clean:
-	rm -rf $(@OBJS)
+$(NAME)		: $(OBJS) $(INCLUDES)
+	$(CXX) $(CXXFLAGS)  -o $(NAME) $(OBJS)
 
-fclean: clean
-	rm -f $(NAME)
+all			: $(NAME)
 
-re: fclean all
+clean		:
+	rm -rf $(OBJS)
+
+fclean		: clean
+	rm -rf $(NAME)
+
+re			: fclean all
+
+.PHONY: all clean fclean re

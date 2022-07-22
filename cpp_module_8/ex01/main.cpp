@@ -3,19 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: idouidi <idouidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 11:05:50 by user42            #+#    #+#             */
-/*   Updated: 2022/03/16 12:25:14 by user42           ###   ########.fr       */
+/*   Updated: 2022/07/22 23:26:16 by idouidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
 int main()
-{
+{    
+    std::cout << "BASIC     TEST    AND     SUBJECT     TEST" << std::endl;
+    try
+    {
+        Span spn(5);
+        spn.addNumber(6);
+        spn.addNumber(3);
+        spn.addNumber(17);
+        spn.addNumber(9);
+        spn.addNumber(11);
+        std::cout << spn;
+        std::cout << "the shortest span is: " << spn.shortestSpan()
+            << "\nthe longest span is: " << spn.longestSpan() << std::endl;   
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 
-    
+
+    std::cout << std::endl;
     try
     {
         Span spn(6);
@@ -28,30 +46,31 @@ int main()
         std::cout << spn;
         std::cout << "the shortest span is: " << spn.shortestSpan()
         << "\nthe longest span is: " << spn.longestSpan() << std::endl;
+        std::cout << std::endl;
+        std::cout << "TRY TO ADD A NUMBER BEYOND THE SIZE OF THE VECTOR :" << std::endl;
+        spn.addNumber(5);
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << ">> " <<  e.what() << " <<" << '\n';
     }
+
+
+    std::cout << std::endl;
+    std::cout << "TRY   WITH    RANDOM      10.000      NUMBERS" << std::endl;
+    std::srand(time(0));
     try
     {
-        std::cout << std::endl;
-        std::cout << "subject test: " <<std::endl;
-        Span sp = Span(5);
-
-        sp.addNumber(6);
-        sp.addNumber(3);
-        sp.addNumber(17);
-        sp.addNumber(9);
-        sp.addNumber(11);
-        std::cout << sp;
-        std::cout << "the shortest span is: " << sp.shortestSpan()
-            << "\nthe longest span is: " << sp.longestSpan() << std::endl;   
+        Span s(10000);
+        for(int i = 0; i < 10000; i++)
+            s.addNumber(rand() / (RAND_MAX / (10000 - i) + 1));
+        //std::cout << s << std::endl;
+        std::cout << "the shortest span is: " << s.shortestSpan()
+        << "\nthe longest span is: " << s.longestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << ">> " <<  e.what() << " <<" << '\n';
     }
-    
     return (0);
 }
